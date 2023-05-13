@@ -1,14 +1,17 @@
 from PIL import Image
 import base64
+from . import crypto
 
 def message_to_binary(message):
     # Converts a message to a binary string
     binary_message = ''.join(format(ord(c), '08b') for c in message)
     return binary_message
 
-def encode_image(image_path, message):
+def encode_image(image_path: Image, message, key, encoded_filename):
     # Encodes a message into an image using the LSB method
     image = Image.open(image_path)
+    message = str(crypto.encrypt(message, key))
+    encrypt_length = len(message)
     binary_message = message_to_binary(message)
     if len(binary_message) > (image.size[0] * image.size[1] * 3):
         raise ValueError("Message is too long to encode in this image")
@@ -37,9 +40,12 @@ def encode_image(image_path, message):
         new_pixel_list.append(new_pixel)
     new_image = Image.new(image.mode, image.size)
     new_image.putdata(new_pixel_list)
-    return new_image
+    new_image.save(encoded_filename + ".png")
+    
 
-def decode_image(image_path):
+    return [new_image, encrypt_length]
+
+def decode_image(image_path, message_length, key):
     # Decodes a message from an image encoded using the LSB method
     image = Image.open(image_path)
     pixel_list = list(image.getdata())
@@ -58,12 +64,9 @@ def decode_image(image_path):
         message += chr(int(binary_message[i:i+8], 2))
         if message.endswith('\0'):
             break
-    return message.replace('\0', '')
+    message = message[0:message_length]
 
-image_path = "test.png"
-message = "This is a secret message"
-encoded_image = encode_image(image_path, message)
-encoded_image.save("encoded_image.png")
+    message = message[2:-1].encode()
 
-decoded_message = decode_image("encoded_image.png")
-print(decoded_message)
+    message = crypto.decrypt(message, key)
+    return message

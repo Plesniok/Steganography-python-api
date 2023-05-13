@@ -1,0 +1,338 @@
+{
+	"info": {
+		"_postman_id": "7820b523-8885-4550-89b1-6b6cad1000b0",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20993305",
+		"_collection_link": "https://restless-flare-273436.postman.co/workspace/ShipsProject~27731537-e8f2-4d69-b45e-4399b6dc2c02/collection/20993305-7820b523-8885-4550-89b1-6b6cad1000b0?action=share&creator=20993305&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "create game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"playerName\":\"newPlayerOne\",\r\n    \"ships\":[\r\n        {\r\n            \"x\":1,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":2,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":3,\r\n            \"y\":4\r\n        },\r\n        {\r\n            \"x\":5,\r\n            \"y\":6\r\n        },\r\n        {\r\n            \"x\":7,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":8,\r\n            \"y\":9\r\n        },\r\n        {\r\n            \"x\":10,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":12,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":13,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":19,\r\n            \"y\":1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/game",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"game"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create game",
+					"originalRequest": {
+						"method": "GET",
+						"header": []
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "create game",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"playerName\":\"newPlayerOne\",\r\n    \"ships\":[\r\n        {\r\n            \"x\":1,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":2,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":3,\r\n            \"y\":4\r\n        },\r\n        {\r\n            \"x\":5,\r\n            \"y\":6\r\n        },\r\n        {\r\n            \"x\":7,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":8,\r\n            \"y\":9\r\n        },\r\n        {\r\n            \"x\":10,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":12,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":13,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":19,\r\n            \"y\":1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/game",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"game"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "add player two",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableName\":\"iungkcfcuw\",\r\n    \"playerName\":\"newPlayerTwo\",\r\n    \"ships\":[\r\n        {\r\n            \"x\":1,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":2,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":3,\r\n            \"y\":4\r\n        },\r\n        {\r\n            \"x\":5,\r\n            \"y\":6\r\n        },\r\n        {\r\n            \"x\":7,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":8,\r\n            \"y\":9\r\n        },\r\n        {\r\n            \"x\":10,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":12,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":13,\r\n            \"y\":1\r\n        },\r\n        {\r\n            \"x\":19,\r\n            \"y\":1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/player/two",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"player",
+						"two"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get player index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7185/player/index?tableName=ravzavgkkv&playerName=newPlayerOne",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"player",
+						"index"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "ravzavgkkv"
+						},
+						{
+							"key": "playerName",
+							"value": "newPlayerOne"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get available ships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7185/ship/get-all/available?tableName=ravzavgkkv&playerName=newPlayerOne",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"ship",
+						"get-all",
+						"available"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "ravzavgkkv"
+						},
+						{
+							"key": "playerName",
+							"value": "newPlayerOne"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get not available ships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ship/get-all/not-available?tableName=iungkcfcuw&playerName=newPlayerOne",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ship",
+						"get-all",
+						"not-available"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "iungkcfcuw"
+						},
+						{
+							"key": "playerName",
+							"value": "newPlayerOne"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "destroy ship",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableName\":\"nwzbvnevka\",\r\n    \"playerName\":\"newPlayerOne\",\r\n    \"ship\":\r\n        {\r\n            \"x\":1,\r\n            \"y\":2\r\n        }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7185/ship/destroy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"ship",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "iungkcfcuw",
+							"disabled": true
+						},
+						{
+							"key": "playerName",
+							"value": "newPlayerOne",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set player tour",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableName\":\"nwzbvnevka\",\r\n    \"playerName\":\"newPlayerOne\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7185/player/tour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"player",
+						"tour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get player tour",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7185/player/tour?tableName=nwzbvnevka",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"player",
+						"tour"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "nwzbvnevka"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get missed ships",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7185/ship/get-all/missed?tableName=nwzbvnevka&playerName=newPlayerTwo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7185",
+					"path": [
+						"ship",
+						"get-all",
+						"missed"
+					],
+					"query": [
+						{
+							"key": "tableName",
+							"value": "nwzbvnevka"
+						},
+						{
+							"key": "playerName",
+							"value": "newPlayerTwo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
