@@ -1,14 +1,13 @@
 from PIL import Image
 import base64
 from . import crypto
+from io import BytesIO
 
 def message_to_binary(message):
-    # Converts a message to a binary string
     binary_message = ''.join(format(ord(c), '08b') for c in message)
     return binary_message
 
-def encode_image(image_path: Image, message, key, encoded_filename):
-    # Encodes a message into an image using the LSB method
+def encode_image(image_path: Image, message, key):
     image = Image.open(image_path)
     message = str(crypto.encrypt(message, key))
     encrypt_length = len(message)
@@ -40,14 +39,15 @@ def encode_image(image_path: Image, message, key, encoded_filename):
         new_pixel_list.append(new_pixel)
     new_image = Image.new(image.mode, image.size)
     new_image.putdata(new_pixel_list)
-    new_image.save(encoded_filename + ".png")
     
 
     return [new_image, encrypt_length]
 
-def decode_image(image_path, message_length, key):
-    # Decodes a message from an image encoded using the LSB method
-    image = Image.open(image_path)
+async def decode_image(file, message_length, key):
+
+    contents = await file.read()  
+    image = Image.open(BytesIO(contents)) 
+
     pixel_list = list(image.getdata())
     binary_list = []
     for pixel in pixel_list:

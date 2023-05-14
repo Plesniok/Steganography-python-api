@@ -1,5 +1,0 @@
-Hello,
-
-This is an example email sent using Python.
-
-Thank you.
