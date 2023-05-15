@@ -10,7 +10,7 @@ Decode a message from a steganographically encoded image.
 Clone the repository to your local machine:
 
 ```
-git clone https://github.com/your-username/steganography-api.git
+git clone https://github.com/Plesniok/Steganography-python-api.git
 ```
 Navigate to the project directory:
 
