@@ -1,5 +1,4 @@
 from PIL import Image
-import base64
 from . import crypto
 from io import BytesIO
 
